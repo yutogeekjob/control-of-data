@@ -1,0 +1,40 @@
+<%-- 
+    Document   : field
+    Created on : 2017/04/04, 1:30:22
+    Author     : yuto
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <form action="./field.jsp" method="post">
+            <br>名前を入力して</br>
+            <input type ="text" name="textname">
+            <br>性別を選んで</br>
+            <a>男性</a><input type="radio" name="m">
+            <a>女性</a><input type="radio" name="w">
+            <br>趣味とか入力するなっし</br>
+            <textarea name="myhobbies"></textarea>
+            <br><input type="submit" name="s"></br>
+        </form>
+ <%
+  request.setCharacterEncoding("UTF-8");
+  String name=request.getParameter("textname");
+  String man=request.getParameter("m");
+  String woman=request.getParameter("w");
+  String hobbies=request.getParameter("myhobbies");
+  out.println(name);
+  if(man == null){
+  out.println(woman);
+  }else{
+  out.println(man);
+  }
+  out.println(hobbies);
+  %>
+    </body>
+</html>
